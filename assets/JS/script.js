@@ -96,9 +96,9 @@ function kartTiklama(olay) {
 
         if (puan == 4){
             var congrats = document.createElement('img');
-            congrats.src = '../img/congratulations.gif';
+            congrats.src = "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNTdkZTY4ODQ3MjQ5YjQ0MzZlN2RjY2YxNWQxOTliNDhjYWFjODAxNCZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/0bBGQgpJTUfTVzY6Xo/giphy.gif" 
             imageShow = document.querySelector('body').appendChild(congrats);
-            console.log("Image Created");
+            console.log("Tebrikler");
 
             setTimeout(function(){
                 imageShow.remove();
