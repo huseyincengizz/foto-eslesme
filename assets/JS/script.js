@@ -15,20 +15,36 @@ const kartTemplate = `
     </div>
 `;
 
-let randomNum = function(){
+    let randomNum = function() {
     let randomArray = [];
-    for (let i = 0; i < 8; i++){
-       let randomNumbers = Math.floor(Math.random() * 99);
-        randomArray.push(randomNumbers, randomNumbers);
-        if (randomArray.length > 6) break;
+    let numbers = [];
+  
+    for (let i = 1; i <= 99; i++) {
+      numbers.push(i);
     }
-    return randomArray
-};
-
-const fotoNumaralari = randomNum();
-//[10, 20, 30, 20, 10, 40, 40, 30];
-
-console.log(fotoNumaralari);
+  
+    for (let i = 0; i < 4; i++) {
+      
+      let randomNumber = Math.floor(Math.random() * numbers.length);
+      let number = numbers[randomNumber];
+  
+      
+      randomArray.push(number, number);
+      numbers.splice(randomNumber, 1); 
+  
+      randomNumber = Math.floor(Math.random() * numbers.length);
+      number = numbers[randomNumber];
+  
+      randomArray.push(number, number);
+      numbers.splice(randomNumber, 1);
+    }
+  
+    return randomArray;
+  };
+  
+  const fotoNumaralari = randomNum();
+  console.log(fotoNumaralari);
+  
 
 for (fotoNumara of fotoNumaralari) {
     const yenikart = document.createElement("div");
@@ -94,7 +110,7 @@ function kartTiklama(olay) {
 
         puanText.innerHTML = puan;
 
-        if (puan == 4){
+        if (puan == 8){
             var congrats = document.createElement('img');
             congrats.src = "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNTdkZTY4ODQ3MjQ5YjQ0MzZlN2RjY2YxNWQxOTliNDhjYWFjODAxNCZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/0bBGQgpJTUfTVzY6Xo/giphy.gif" 
             imageShow = document.querySelector('body').appendChild(congrats);
